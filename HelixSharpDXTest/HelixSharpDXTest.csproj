@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\Front Lid.stl" />
+    <None Remove="Models\shrigma.stl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HelixToolkit" Version="2.25.0" />
+    <PackageReference Include="HelixToolkit.SharpDX.Core" Version="2.25.0" />
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.25.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Models\Front Lid.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\shrigma.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
