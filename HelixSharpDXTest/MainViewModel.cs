@@ -41,11 +41,13 @@
             // camera setup
             Camera = new PerspectiveCamera
             {
-                Position = new Point3D(3, 3, 5),
-                LookDirection = new Vector3D(-3, -3, -5),
+                Position = new Point3D(5, 0, 0),
+                LookDirection = new Vector3D(-5, 0, 0),
                 UpDirection = new Vector3D(0, 1, 0),
                 FarPlaneDistance = 50000
             };
+
+            //Camera.LookAt(new Point3D(0, 0, 0), 1000);
 
             // setup lighting            
             AmbientLightColor = Colors.DimGray;
@@ -72,7 +74,9 @@
                 throw new Exception("3D Model Null!");
             }
 
-            ModelTransform = new Media3D.TranslateTransform3D(0, 0, 0);
+            var rotation = new Media3D.RotateTransform3D(new Media3D.AxisAngleRotation3D(new Vector3D(1,0,0), 270));
+
+            ModelTransform = rotation;
 
             RedMaterial = PhongMaterials.Red;
         }
